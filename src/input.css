@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer base {
+  button {
+    z-index: 2 !important;
+  }
+}
+
+@layer utilities {
+  .indi {
+    z-index: 3 !important;
+  }
+}
