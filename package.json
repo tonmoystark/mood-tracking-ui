@@ -1,7 +1,8 @@
 {
   "homepage": "https://github.com/tonmoystark/mood-tracking-ui",
   "scripts": {
-    "deploy": "gh-pages -d ."
+    "deploy": "gh-pages -d .",
+    "clean": "gh-pages-clean"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
