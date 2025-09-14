@@ -43,7 +43,7 @@ A beautiful and intuitive web application for tracking your daily mood, sleep pa
 
 1. Clone the repository:
 ```bash
-git clone [<my-repository-url >](https://github.com/tonmoystark/mood-tracking-ui.git)
+git clone <my-repository-url >
 cd mood-tracking-app
 npm install
 npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
