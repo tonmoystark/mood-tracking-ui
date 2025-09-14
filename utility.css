@@ -1,0 +1,82 @@
+::-webkit-meter-bar{
+    border-radius: 40px;
+    height: 12px;
+    
+}
+::-webkit-meter-optimum-value{
+    background: blue
+}
+
+.feelTags div label{
+    margin-left: 5px;
+}
+
+.feelTags div{
+    background-color: white;
+    padding: 7px 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.feelTags div.checked{
+    background-color: #e0f7fa;
+    border: 2px solid #00bcd4;
+}
+.feelTags div:hover{
+    background-color: #e0f7fa;
+}
+.sleep-time .hours{
+    background-color: white;
+    margin: 20px 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.sleep-time .hours label{
+    margin-left: 10px;
+}
+
+
+
+.hide{
+    display: none !important;
+}
+.registration,
+.create-account,
+.profile {
+    transition: all 0.3s ease;
+}
+
+.profileImage {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: fill;
+}
+
+#uploadButton {
+    transition: all 0.3s ease;
+}
+
+#uploadButton:hover {
+    background-color: #4865db;
+    color: white;
+}
+
+.centerDiv {
+    position: fixed !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.lowIndex{
+    z-index: 1 !important;
+}
+
+.tinyIcon{
+    width: 50px;
+    height: 50px;
+  }

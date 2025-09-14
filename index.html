@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracking App</title>
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+<body class="">
+    <main class="main-part max-w-full flex bg-linear-to-t from-[#f5f5ff] to-[#e4e4ff] relative min-h-screen  justify-center flex-col items-center">
+        <div class="nav flex justify-center items-center py-2.5 max-w-lg">
+            <div class="pt-6 pb-4">
+                <img src="./images/logo.svg" class="" alt="">
+            </div>
+        </div>
+        <div class="login hide w-auto flex-col justify-start items-start px-14 pb-10 rounded-2xl bg-[#FFFFFF]">
+            <h1 class="text-4xl mb-1 pt-9 font-bold">Welcome back!</h1>
+            <h3 class="text-slate-600 mb-9">Log in to continue tracking your mood and sleep.</h3>
+            <form action="" class="flex flex-col justify-start w-auto items-start">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" class="mb-3 border-[1px] w-93 border-slate-400 rounded-sm py-2 px-3" placeholder="name@mail.com">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="border-[1px] w-93 border-slate-400 rounded-sm mb-3 py-2 px-3" >
+                <input type="submit" class="bg-[#4865db] text-white w-93 py-2 mt-2 rounded-md" value="Log In">
+                <div class="flex justify-center items-center mt-3 w-full ">
+                    <p>Don't have an account?</p>
+                    <a href="" id="registrationCar" class="text-blue-600">Sign Up</a>
+                </div>
+            </form>
+        </div>
+        <div class="registration flex w-auto flex-col justify-start items-start px-14 pb-10 rounded-2xl bg-[#FFFFFF]">
+            <h1 class="text-4xl mb-1 pt-9 font-bold">Create an account</h1>
+            <h3 class="text-slate-600 mb-9">Join to track your daily mood and sleep with ease.</h3>
+            <form action="" class="flex flex-col justify-start w-auto items-start" id="registrationForm">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="newAccountEmail" class="mb-3 border-[1px] w-93 border-slate-400 rounded-sm py-2 px-3" placeholder="name@mail.com">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="border-[1px] w-93 border-slate-400 rounded-sm mb-3 py-2 px-3" id="newAccountPassword">
+                <input type="submit" id="newAccountSubmit" class="bg-[#4865db] text-white w-93 py-2 mt-2 rounded-md" value="Sign Up">
+                <div class="flex justify-center items-center mt-3 w-full ">
+                    <p>Already have an account?</p>
+                    <a href="" id="logInCar" class="text-blue-600">Log In</a>
+                </div>
+            </form>
+        </div>
+        <div class="create-account hide w-auto flex-col justify-start items-start px-14 pb-10 rounded-2xl bg-[#FFFFFF]">
+            <h1 class="text-4xl mb-1 pt-9 font-bold">Create an account</h1>
+            <h3 class="text-slate-600 mb-9" id="back">Join to track your daily mood and sleep with ease.</h3>
+            <form action="" class="flex flex-col justify-start w-auto items-start" id="createAccount">
+                <label for="text">Name</label>
+                <input type="text" name="text" id="userName" class="mb-3 border-[1px] w-93 border-slate-400 rounded-sm py-2 px-3" placeholder="Jon">
+                <div class="upload-img flex justify-start items-start my-2.5 gap-4">
+                        <img src="./images/avatar-placeholder.svg" class="profileImage" alt="">
+                        <div class="img-type">
+                            <p class="font-bold text-lg" id="imageTitle">Upload Image</p>
+                            <p class="text-sm text-slate-400" id="imageType">PNG or JPEG</p>
+                            <button class="border-2 border-slate-400 px-2 py-1 rounded-md text-lg my-3.5 hover: cursor-pointer" id="uploadButton" type="button">Upload</button>
+                            <input type="file" name="file" class="hidden" id="file">
+                        </div>
+                </div>
+                <input type="submit" class="bg-[#4865db] text-white w-93 py-2 mt-2 rounded-md" id="createAccountSubmit" value="Sign Up">
+                
+            </form>
+        </div>
+
+    </main>
+
+    <div class="profile flex hide flex-col w-full justify-around relative items-center" id="profile"> <!--do not forget to add hide class-->
+        <header class="flex justify-between w-full items-center sm:px-14 px-4 py-4">
+            <img src="./images/logo.svg" alt="" class="pro-logo">
+            <div class="flex justify-start items-center gap-2">
+                <img src="./images/avatar-placeholder.svg" class=" profileImage" alt="">
+                <button class="profile-check cursor-pointer relative"><img src="./images/icon-dropdown-arrow.svg" alt=""></button>
+                <div class="smallData hide h-fit w-fit bg-white border-[1px] border-slate-400 flex flex-col justify-start items-start py-3 px-4 rounded-md absolute top-18 right-6">
+                    <p class="smallDataName text-xl"></p>
+                    <p class="smallDataEmail text-sm lg:text-xl mb-2"></p>
+                    <hr class="w-full mb-2 px-2">
+                    <button class="flex settingBtn justify-start items-center cursor-pointer gap-2"><img src="./images/icon-settings.svg" alt=""><span>Settings</span></button>
+                    <button class="flex justify-start items-center cursor-pointer mt-1 gap-2" id="logOutBtn"><img src="./images/icon-logout.svg" alt=""><span>Log out</span></button>
+                </div>
+            </div>
+        </header>
+        <h1 class="greet text-blue-500 font-bold mt-8 text-lg md:text-2xl">
+                Hello, <span class="name">Lisa</span>
+            </h1>
+            <h1 class="feel font-extrabold text-3xl md:text-5xl my-3 ">How are you feeling today?</h1>
+            <p class="date mb-6"></p>
+            <button class="log-mood bg-blue-400 text-white px-3.5 py-2 mb-5 font-semibold rounded-md hover:cursor-pointer">Log today's mood</button>
+
+            <div class="mainWrapper w-full flex flex-col md:justify-center md:items-center gap-5">
+                <div class="firstPart hide w-full sm:h-[300px] box-border lg:mx-0 h-fit flex justify-center flex-col sm:flex-row items-center gap-4">
+                    <div class="left1 border-2 border-slate-400 py-7 rounded-2xl flex justify-center items-center w-[380px] sm:w-[700px] px-4 h-[300px]">
+                        <div class="feels flex flex-col justify-between items-start h-full w-80% sm:w-full">
+                            <div class="feelsTop">
+                                <h3 class="text-slate-600 sm:text-4xl text-xl font-semibold">I'm feeling</h3>
+                                <h1 id="status" class="sm:text-4xl text-xl font-bold text-slate-800 ml-2">Very Happy</h1>
+                            </div>
+                            <div class="feelsBottom">
+                                <img class="w-8 h-8" src="./images/icon-quote.svg" alt="">
+                                <p class="quote sm:w-[70%] w-full" id="quote"></p>
+                            </div>
+                        </div>
+                        <div class="feelsImg">
+                            <img id="feelsImg" class="h-[200px] w-[200px] lg:h-[350px] lg:w-[350px]" alt="">
+                        </div>
+                    </div>
+                    <div class="right1 flex flex-col gap-4  sm:w-[400px] sm:h-[300px]">
+                        <div class="top border-2 border-slate-400 rounded-2xl h-[100px] w-[380px] px-6 py-4">
+                            <div class="flex justify-start items-center gap-2">
+                                <img src="./images/icon-sleep.svg" alt="">
+                                <p class="text-2xl">Sleep</p>
+                            </div>
+                            <div class="text-4xl font-semibold">
+                                <span id="hours"></span>
+                            </div>
+                        </div>
+                        <div class="bottom border-2 border-slate-400 px-6 py-4 rounded-2xl w-[380px] h-[180px]">
+                            <div class="flex justify-start items-center gap-2 mb-2">
+                                <img src="./images/icon-reflection.svg" alt="">
+                                <p>Reflection of the day</p>
+                            </div>
+                            <p class="random-msg"></p>
+                            <p class="mt-5" id="selectedTags"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="secondPart w-full flex gap-4 mb-8 h-full flex-col lg:flex-row justify-center items-center">
+                    <div class="average sm:h-[500px] border-2 border-slate-400 bg-white py-7 rounded-2xl w-[380px] h-fit flex-col flex justify-start items-start">
+                    <div class="mood flex justify-start gap-2 items-end px-4 py-1" id="averageMood">
+                        <p  class="font-bold text-lg">Average Mood</p>
+                        <p class="text-sm">(After 5 check-ins)</p>
+                    </div>
+                    <div class="bg-slate-300 flex flex-col justify-start w-[90%] rounded-xl items-start py-5 px-2 mx-4">
+                        <h1 class="text-lg md:text-xl font-bold">Keep Tracking!</h1>
+                        <p class="text-sm md:text-lg">Log five check-ins to see your average mood</p>
+                    </div>
+                    <div class="sleep flex justify-start gap-2 items-end px-4 pt-4 py-1">
+                        <p class="font-bold text-lg">Average Sleep</p>
+                        <p class="text-sm">(After 5 check-ins)</p>
+                    </div>
+                    <div class="bg-slate-300 flex flex-col justify-start w-[90%] rounded-xl items-start py-5 px-2 mx-4"  id="averageSleep">
+                        <h1 class="text-lg md:text-xl font-bold">Not enough data yet!</h1>
+                        <p class="text-sm md:text-lg">Track five nights to view your average sleep</p>
+                    </div>
+                </div>
+                <div class="forGrid border-2 border-slate-400 flex flex-col justify-start items-start w-[380px] sm:w-[700px] h-[500px] p-6 rounded-xl bg-white shadow-md">
+  <h1 class="text-2xl font-bold mb-4">Sleep Hours</h1>
+
+  <div class="flex w-full">
+    <!-- Y-axis with hours -->
+    <div class="flex flex-col justify-between pb-4 pr-4 text-right text-sm font-medium">
+      <p>9+ hrs</p>
+      <p>7-8 hrs</p>
+      <p>5-6 hrs</p>
+      <p>3-4 hrs</p>
+      <p>0-2 hrs</p>
+      <p>Let's See</p>
+    </div>
+
+    <!-- Chart area (bars will be inserted here dynamically) -->
+    <div id="barContainer" class="flex-1 overflow-x-scroll flex items-end gap-3 relative border-l-2 w-fit border-pink-300 pl-3 h-[420px]"></div>
+  </div>
+  </div>
+
+</div>
+
+
+
+                </div>
+            </div>
+    </div>
+
+    <div class="logging-select-mood indi hide bg-[#f5f5ff] absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-sm h-md px-7 rounded-xl">
+        <button class="cursor-pointer mt-3.5 flex justify-end w-full" id="exitBtn"><img src="./images/cross-svgrepo-com.svg" class="w-7 h-7" alt=""></button>
+        <h1 class="font-bold text-2xl">Log your mood</h1>
+        <div class="flex justify-around items-center w-full my-6 gap-1 ">
+            <meter class="meter" value="100" min="0" max="100"></meter>
+            <meter class="meter" value="" min="0" max="100"></meter>
+            <meter class="meter" value="" min="0" max="100"></meter>
+            <meter class="meter" value="" min="0" max="100"></meter>
+        </div>
+        <h1 class="font-bold text-2xl">How was your mood today?</h1>
+        <div class="flex border-2 justify-between bg-white items-center w-full my-6 p-2 rounded-xl gap-1 ">
+            <button><input value="Very Happy" type="radio" class="mr-2.5" name="v-happy" id="v-happy"><label for="v-happy"></label>Very Happy</button>
+            <div><img src="./images/icon-very-happy-color.svg" class="w-7 h-7" alt=""></div>
+        </div>
+        <div class="flex border-2 justify-between items-center bg-white w-full my-6 p-2 rounded-xl gap-1 ">
+            <button><input value="Happy" type="radio" class="mr-2.5" name="v-happy" id="happy"><label for="v-happy"></label>Happy</button>
+            <div><img src="./images/icon-happy-color.svg" class="w-7 h-7" alt=""></div>
+        </div>
+        <div class="flex border-2 justify-between items-center bg-white w-full my-6 p-2 rounded-xl gap-1 ">
+            <button><input value="Neutral" type="radio" class="mr-2.5" name="v-happy" id="neutral"><label for="v-happy"></label>Neutral</button>
+            <div><img src="./images/icon-neutral-color.svg" class="w-7 h-7" alt=""></div>
+        </div>
+        <div class="flex border-2 justify-between items-center bg-white w-full my-6 p-2 rounded-xl gap-1 ">
+            <button><input value="Sad" type="radio" class="mr-2.5" name="v-happy" id="sad"><label for="v-happy"></label>Sad</button>
+            <div><img src="./images/icon-sad-color.svg" class="w-7 h-7" alt=""></div>
+        </div>
+        <div class="flex border-2 justify-between items-center bg-white w-full my-6 p-2 rounded-xl gap-1 ">
+            <button><input value="Very Sad" type="radio" class="mr-2.5" name="v-happy" id="v-sad"><label for="v-happy"></label>Very Sad</button>
+            <div><img src="./images/icon-very-sad-color.svg" class="w-7 h-7" alt=""></div>
+        </div>
+        <button type="submit" id="continue1" class="w-full bg-blue-700 font-bold rounded-3xl mb-5 py-2 text-white">Continue</button>
+    </div>
+    <div class="logging-feeling hide indi bg-[#f5f5ff] absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-sm lg:w-lg h-md px-7 rounded-xl">
+        <button class="cursor-pointer mt-3.5 flex justify-end w-full" id="exitBtn"><img src="./images/cross-svgrepo-com.svg" class="w-7 h-7" alt=""></button>
+        <h1 class="font-bold text-2xl">Log your mood</h1>
+        <div class="flex justify-around items-center w-full my-6 gap-1 ">
+            <meter class="meter" value="100" min="0" max="100"></meter>
+            <meter class="meter" value="100" min="0" max="100"></meter>
+            <meter class="meter" value="" min="0" max="100"></meter>
+            <meter class="meter" value="" min="0" max="100"></meter>
+        </div>
+        <h1 class="font-bold text-2xl">How did you feel?</h1>
+        <p class="text-sm lg:text-md">select upto three tags</p>
+        <div class="feelTags flex flex-wrap w-full h-full gap-4 my-4 text-sm lg:text-lg">
+            <div><input type="checkbox" name="joyful"><label for="joyful">Joyful</label></div>
+            <div><input type="checkbox" name="down"><label for="down">down</label></div>
+            <div><input type="checkbox" name="anxious"><label for="anxious">Anxious</label></div>
+            <div><input type="checkbox" name="calm"><label for="calm">Calm</label></div>
+<div><input type="checkbox" name="excited"><label for="excited">Excited</label></div>
+<div><input type="checkbox" name="frustrated"><label for="frustrated">Frustrated</label></div>
+<div><input type="checkbox" name="lonely"><label for="lonely">Lonely</label></div>
+<div><input type="checkbox" name="grateful"><label for="grateful">Grateful</label></div>
+<div><input type="checkbox" name="overwhelmed"><label for="overwhelmed">Overwhelmed</label></div>
+<div><input type="checkbox" name="motivated"><label for="motivated">Motivated</label></div>
+<div><input type="checkbox" name="irritable"><label for="irritable">Irritable</label></div>
+<div><input type="checkbox" name="peaceful"><label for="peaceful">Peaceful</label></div>
+<div><input type="checkbox" name="tired"><label for="tired">Tired</label></div>
+<div><input type="checkbox" name="hopeful"><label for="hopeful">Hopeful</label></div>
+<div><input type="checkbox" name="confident"><label for="confident">Confident</label></div>
+<div><input type="checkbox" name="stressed"><label for="stressed">Stressed</label></div>
+<div><input type="checkbox" name="content"><label for="content">Content</label></div>
+<div><input type="checkbox" name="disappointed"><label for="disappointed">Disappointed</label></div>
+<div><input type="checkbox" name="optimistic"><label for="optimistic">Optimistic</label></div>
+<div><input type="checkbox" name="restless"><label for="restless">Restless</label></div>
+
+        </div>
+        <button type="submit" id="continue2" class="w-full bg-blue-700 font-bold rounded-3xl mb-5 py-2 text-white">Continue</button>
+    </div>    
+
+    <div class="about-day hide indi bg-[#f5f5ff] absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-sm h-md px-7 rounded-xl">
+        <button class="cursor-pointer mt-3.5 flex justify-end w-full" id="exitBtn"><img src="./images/cross-svgrepo-com.svg" class="w-7 h-7" alt=""></button>
+        <h1 class="font-bold text-2xl">Log your mood</h1>
+        <div class="flex justify-around items-center w-full my-6 gap-1 ">
+            <meter class="meter" value="100" min="0" max="100"></meter>
+            <meter class="meter" value="100" min="0" max="100"></meter>
+            <meter class="meter" value="100" min="0" max="100"></meter>
+            <meter class="meter" value="" min="0" max="100"></meter>
+        </div>
+        <h1 class="font-bold text-2xl">How was your mood today?</h1>
+
+<textarea id="aboutDay" name="about-day" 
+  placeholder="Today I felt..." 
+  class="w-full h-40 bg-white mt-4 p-4 rounded-2xl border-[1px] border-slate-400"></textarea>
+
+<div class="words-left flex justify-end items-center mb-4">
+  <p><span id="charCount">0</span>/150</p>
+</div>
+        <button type="submit" id="continue3" class="w-full bg-blue-700 font-bold rounded-3xl mb-5 py-2 text-white">Continue</button>
+    </div>
+
+    <div class="sleep-time indi hide bg-[#f5f5ff] absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-sm h-md px-7 rounded-xl">
+    <button class="cursor-pointer mt-3.5 flex justify-end w-full" id="exitBtn"><img src="./images/cross-svgrepo-com.svg" class="w-7 h-7" alt=""></button>
+    <h1 class="font-bold text-2xl">Log your mood</h1>
+    <div class="flex justify-around items-center w-full my-6 gap-1 ">
+        <meter class="meter" value="100" min="0" max="100"></meter>
+        <meter class="meter" value="100" min="0" max="100"></meter>
+        <meter class="meter" value="100" min="0" max="100"></meter>
+        <meter class="meter" value="100" min="0" max="100"></meter>
+    </div>
+    <h1 class="font-bold text-2xl">How many hours did you sleep last night?</h1>
+    <div class="hours"><input type="radio" name="sleep_hours" id="nine"><label for="nine">9+ hours</label></div>
+    <div class="hours"><input type="radio" name="sleep_hours" id="seven"><label for="seven">7-8 hours</label></div>
+    <div class="hours"><input type="radio" name="sleep_hours" id="five"><label for="five">5-6 hours</label></div>
+    <div class="hours"><input type="radio" name="sleep_hours" id="three"><label for="three">3-4 hours</label></div>
+    <div class="hours"><input type="radio" name="sleep_hours" id="zero"><label for="zero">0-2 hours</label></div>
+    <button type="submit" id="continue4" class="w-full bg-blue-700 font-bold rounded-3xl mb-5 py-2 text-white">Submit</button>
+</div>
+    <script src="./formula.js"></script>
+</body>
+</html>
