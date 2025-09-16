@@ -6,8 +6,8 @@ let newAccountData = document.querySelector(".create-account");
 let welcomeBack = document.querySelector("#back");
 let logOutBtn = document.querySelector("#logOutBtn");
 let h1Status = document.querySelector("#status");
-let sleepData = [];
-let moodData = []; // Add this line to track mood data
+let sleepData = []; // To track sleep data
+let moodData = []; // To track mood data
 function showCard(cardName){
     let card = document.querySelector(cardName);
     card.classList.remove("hide");
@@ -49,6 +49,8 @@ function imageChanger(e) {
     if(file){
         let reader = new FileReader();
     reader.readAsDataURL(file);
+    imageType.textContent = file.type;
+    imageTitle.textContent = file.name;
     reader.onload = () => {
         let imges = document.querySelectorAll(".profileImage");
         imges.forEach(img => {
@@ -60,10 +62,11 @@ function imageChanger(e) {
         let imges = document.querySelectorAll(".profileImage");
         imges.forEach(img => {
             img.src = "./images/avatar-placeholder.svg";
+            imageType.textContent = `Type not available`;
+            imageTitle.textContent = `Select an image`;
         })
     }
-    imageType.textContent = file.type;
-    imageTitle.textContent = file.name;
+
 }
 //upload image part ended.
 
@@ -294,26 +297,34 @@ function updateMoodAverageDisplay() {
         const sum = moodData.reduce((a, b) => a + b, 0);
         const average = (sum / moodData.length).toFixed(1);
         
-        averageMoodDiv.style.backgroundColor = "#89E780";
-        
         let moodText;
         let moodIcon;
         
         if (average >= 1.5) {
             moodText = "Very Happy";
             moodIcon = "./images/icon-very-happy-color.svg";
+            averageMoodDiv.style.backgroundColor = "#059669";
+            averageSleepDiv.style.backgroundColor = "#059669";
         } else if (average >= 0.5) {
             moodText = "Happy";
             moodIcon = "./images/icon-happy-color.svg";
+            averageMoodDiv.style.backgroundColor = "#2563eb";
+            averageSleepDiv.style.backgroundColor = "#2563eb";
         } else if (average >= -0.5) {
             moodText = "Neutral";
             moodIcon = "./images/icon-neutral-color.svg";
+            averageMoodDiv.style.backgroundColor = "#eab308";
+            averageSleepDiv.style.backgroundColor = "#eab308";
         } else if (average >= -1.5) {
             moodText = "Sad";
             moodIcon = "./images/icon-sad-color.svg";
+            averageMoodDiv.style.backgroundColor = "#f97316";
+            averageSleepDiv.style.backgroundColor = "#f97316";
         } else {
             moodText = "Very Sad";
             moodIcon = "./images/icon-very-sad-color.svg";
+            averageMoodDiv.style.backgroundColor = "#dc2626";
+            averageSleepDiv.style.backgroundColor = "#dc2626";
         }
         
         averageMoodDiv.innerHTML = `
@@ -325,15 +336,15 @@ function updateMoodAverageDisplay() {
         `;
     } else {
         // Clear the average display if we don't have enough data
+        averageSleepDiv.style.backgroundColor = ""
         averageMoodDiv.style.backgroundColor = "";
-        averageMoodDiv.innerHTML = `<div class="bg-slate-300 flex flex-col justify-start w-[90%] rounded-xl items-start py-5 px-2 mx-4">
-                        <h1 class="text-lg md:text-xl font-bold">Keep Tracking!</h1>
-                        <p class="text-sm md:text-lg">Log five check-ins to see your average mood</p>
-                    </div>`;
+        averageMoodDiv.innerHTML = `
+            <div class="bg-slate-300 flex flex-col justify-start w-[90%] rounded-xl items-start py-5 px-2 mx-4">
+                <h1 class="text-lg md:text-xl font-bold">Keep Tracking!</h1>
+                <p class="text-sm md:text-lg">Log five check-ins to see your average mood</p>
+            </div>`;
     }
 }
-
-// ... rest of the existing code ...
 
 //many moods.
 
@@ -522,14 +533,13 @@ continue4.addEventListener("click", function() {
     }
 });
 
+const averageSleepDiv = document.querySelector("#averageSleep");
 function updateSleepAverageDisplay() {
-    const averageSleepDiv = document.querySelector("#averageSleep");
     
     if (sleepData.length >= 5) {
         const sum = sleepData.reduce((a, b) => a + b, 0);
         const average = (sum / sleepData.length).toFixed(1);
         
-        averageSleepDiv.style.backgroundColor = "#89E780";
         averageSleepDiv.innerHTML = `
             <h1 class="text-lg md:text-xl font-bold">${average} hours</h1>
             <p class="text-sm md:text-lg">Your average sleep over the last ${sleepData.length} nights</p>
