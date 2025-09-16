@@ -132,6 +132,7 @@ document.addEventListener('click', (e) => {
     if (!smallMenu.classList.contains('hide') && 
         !smallMenu.contains(e.target) && 
         !profileButton.contains(e.target)) {
+            
         smallMenu.classList.add('hide');
     }
 });
