@@ -268,7 +268,7 @@ continue1.addEventListener("click", async () => {
         moodData.push(moodValue);
         
         // Calculate average mood if we have at least 5 entries
-        updateMoodAverageDisplay();
+        
         
         // Fetch and set random quote
         try {
@@ -454,7 +454,7 @@ continue4.addEventListener("click", function() {
         
         // Calculate average if we have at least 5 entries
         updateSleepAverageDisplay()
-
+        updateMoodAverageDisplay();
         // Bar heights
         const heightMap = {
             "9+ hours": 375,

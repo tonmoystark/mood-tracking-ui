@@ -66,110 +66,110 @@
 
     </main>
 
-    <div class="profile flex hide flex-col w-full justify-around relative items-center" id="profile"> <!--do not forget to add hide class-->
-        <header class="flex justify-between w-full items-center sm:px-14 px-4 py-4">
-            <img src="./images/logo.svg" alt="" class="pro-logo">
-            <div class="flex justify-start items-center gap-2">
-                <img src="./images/avatar-placeholder.svg" class=" profileImage" alt="">
-                <button class="profile-check cursor-pointer relative"><img src="./images/icon-dropdown-arrow.svg" alt=""></button>
-                <div class="smallData hide h-fit w-fit bg-white border-[1px] border-slate-400 flex flex-col justify-start items-start py-3 px-4 rounded-md absolute top-18 right-6">
-                    <p class="smallDataName text-xl"></p>
-                    <p class="smallDataEmail text-sm lg:text-xl mb-2"></p>
-                    <hr class="w-full mb-2 px-2">
-                    <button class="flex settingBtn justify-start items-center cursor-pointer gap-2"><img src="./images/icon-settings.svg" alt=""><span>Settings</span></button>
-                    <button class="flex justify-start items-center cursor-pointer mt-1 gap-2" id="logOutBtn"><img src="./images/icon-logout.svg" alt=""><span>Log out</span></button>
-                </div>
-            </div>
-        </header>
-        <h1 class="greet text-blue-500 font-bold mt-8 text-lg md:text-2xl">
-                Hello, <span class="name">Lisa</span>
-            </h1>
-            <h1 class="feel font-extrabold text-3xl md:text-5xl my-3 ">How are you feeling today?</h1>
-            <p class="date mb-6"></p>
-            <button class="log-mood bg-blue-400 text-white px-3.5 py-2 mb-5 font-semibold rounded-md hover:cursor-pointer">Log today's mood</button>
-
-            <div class="mainWrapper w-full flex flex-col md:justify-center md:items-center gap-5">
-                <div class="firstPart hide w-full sm:h-[300px] box-border lg:mx-0 h-fit flex justify-center flex-col sm:flex-row items-center gap-4">
-                    <div class="left1 border-2 border-slate-400 py-7 rounded-2xl flex justify-center items-center w-[380px] sm:w-[700px] px-4 h-[300px]">
-                        <div class="feels flex flex-col justify-between items-start h-full w-80% sm:w-full">
-                            <div class="feelsTop">
-                                <h3 class="text-slate-600 sm:text-4xl text-xl font-semibold">I'm feeling</h3>
-                                <h1 id="status" class="sm:text-4xl text-xl font-bold text-slate-800 ml-2">Very Happy</h1>
-                            </div>
-                            <div class="feelsBottom">
-                                <img class="w-8 h-8" src="./images/icon-quote.svg" alt="">
-                                <p class="quote sm:w-[70%] w-full" id="quote"></p>
-                            </div>
-                        </div>
-                        <div class="feelsImg">
-                            <img id="feelsImg" class="h-[200px] w-[200px] lg:h-[350px] lg:w-[350px]" alt="">
-                        </div>
-                    </div>
-                    <div class="right1 flex flex-col gap-4  sm:w-[400px] sm:h-[300px]">
-                        <div class="top border-2 border-slate-400 rounded-2xl h-[100px] w-[380px] px-6 py-4">
-                            <div class="flex justify-start items-center gap-2">
-                                <img src="./images/icon-sleep.svg" alt="">
-                                <p class="text-2xl">Sleep</p>
-                            </div>
-                            <div class="text-4xl font-semibold">
-                                <span id="hours"></span>
-                            </div>
-                        </div>
-                        <div class="bottom border-2 border-slate-400 px-6 py-4 rounded-2xl w-[380px] h-[180px]">
-                            <div class="flex justify-start items-center gap-2 mb-2">
-                                <img src="./images/icon-reflection.svg" alt="">
-                                <p>Reflection of the day</p>
-                            </div>
-                            <p class="random-msg"></p>
-                            <p class="mt-5" id="selectedTags"></p>
-                        </div>
+        <div class="profile flex hide flex-col w-full justify-around relative items-center" id="profile"> <!--do not forget to add hide class-->
+            <header class="flex justify-between w-full items-center sm:px-14 px-4 py-4">
+                <img src="./images/logo.svg" alt="" class="pro-logo">
+                <div class="flex justify-start items-center gap-2">
+                    <img src="./images/avatar-placeholder.svg" class=" profileImage" alt="">
+                    <button class="profile-check cursor-pointer relative"><img src="./images/icon-dropdown-arrow.svg" alt=""></button>
+                    <div class="smallData hide h-fit w-fit bg-white border-[1px] border-slate-400 flex flex-col justify-start items-start py-3 px-4 rounded-md absolute top-18 right-6">
+                        <p class="smallDataName text-xl"></p>
+                        <p class="smallDataEmail text-sm lg:text-xl mb-2"></p>
+                        <hr class="w-full mb-2 px-2">
+                        <button class="flex settingBtn justify-start items-center cursor-pointer gap-2"><img src="./images/icon-settings.svg" alt=""><span>Settings</span></button>
+                        <button class="flex justify-start items-center cursor-pointer mt-1 gap-2" id="logOutBtn"><img src="./images/icon-logout.svg" alt=""><span>Log out</span></button>
                     </div>
                 </div>
-                <div class="secondPart w-full flex gap-4 mb-8 h-full flex-col lg:flex-row justify-center items-center">
-                    <div class="average sm:h-[500px] border-2 border-slate-400 bg-white py-7 rounded-2xl w-[380px] h-fit flex-col flex justify-start items-start">
-                    <div class="mood flex justify-start gap-2 items-end px-4 py-1" id="averageMood">
-                        <p  class="font-bold text-lg">Average Mood</p>
-                        <p class="text-sm">(After 5 check-ins)</p>
+            </header>
+            <h1 class="greet text-blue-500 font-bold mt-8 text-lg md:text-2xl">
+                    Hello, <span class="name">Lisa</span>
+                </h1>
+                <h1 class="feel font-extrabold text-3xl md:text-5xl my-3 ">How are you feeling today?</h1>
+                <p class="date mb-6"></p>
+                <button class="log-mood bg-blue-400 text-white px-3.5 py-2 mb-5 font-semibold rounded-md hover:cursor-pointer">Log today's mood</button>
+
+                <div class="mainWrapper w-full flex flex-col md:justify-center md:items-center gap-5">
+                    <div class="firstPart hide w-full sm:h-[300px] box-border lg:mx-0 h-fit flex justify-center flex-col sm:flex-row items-center gap-4">
+                        <div class="left1 border-2 border-slate-400 py-7 rounded-2xl flex justify-center items-center w-[380px] sm:w-[700px] px-4 h-[300px]">
+                            <div class="feels flex flex-col justify-between items-start h-full w-80% sm:w-full">
+                                <div class="feelsTop">
+                                    <h3 class="text-slate-600 sm:text-4xl text-xl font-semibold">I'm feeling</h3>
+                                    <h1 id="status" class="sm:text-4xl text-xl font-bold text-slate-800 ml-2">Very Happy</h1>
+                                </div>
+                                <div class="feelsBottom">
+                                    <img class="w-8 h-8" src="./images/icon-quote.svg" alt="">
+                                    <p class="quote sm:w-[70%] w-full" id="quote"></p>
+                                </div>
+                            </div>
+                            <div class="feelsImg">
+                                <img id="feelsImg" class="h-[200px] w-[200px] lg:h-[350px] lg:w-[350px]" alt="">
+                            </div>
+                        </div>
+                        <div class="right1 flex flex-col gap-4  sm:w-[400px] sm:h-[300px]">
+                            <div class="top border-2 border-slate-400 rounded-2xl h-[100px] w-[380px] px-6 py-4">
+                                <div class="flex justify-start items-center gap-2">
+                                    <img src="./images/icon-sleep.svg" alt="">
+                                    <p class="text-2xl">Sleep</p>
+                                </div>
+                                <div class="text-4xl font-semibold">
+                                    <span id="hours"></span>
+                                </div>
+                            </div>
+                            <div class="bottom border-2 border-slate-400 px-6 py-4 rounded-2xl w-[380px] h-[180px]">
+                                <div class="flex justify-start items-center gap-2 mb-2">
+                                    <img src="./images/icon-reflection.svg" alt="">
+                                    <p>Reflection of the day</p>
+                                </div>
+                                <p class="random-msg"></p>
+                                <p class="mt-2" id="selectedTags"></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-slate-300 flex flex-col justify-start w-[90%] rounded-xl items-start py-5 px-2 mx-4">
-                        <h1 class="text-lg md:text-xl font-bold">Keep Tracking!</h1>
-                        <p class="text-sm md:text-lg">Log five check-ins to see your average mood</p>
+                    <div class="secondPart w-full flex gap-4 mb-8 h-full flex-col lg:flex-row justify-center items-center">
+                        <div class="average sm:h-[500px] border-2 border-slate-400 bg-white py-7 rounded-2xl w-[380px] h-fit flex-col flex justify-start items-start">
+                        <div class="mood flex justify-start gap-2 items-end px-4 py-1" id="averageMood">
+                            <p  class="font-bold text-lg">Average Mood</p>
+                            <p class="text-sm">(After 5 check-ins)</p>
+                        </div>
+                        <div class="bg-slate-300 flex flex-col justify-start w-[90%] rounded-xl items-start py-5 px-2 mx-4">
+                            <h1 class="text-lg md:text-xl font-bold">Keep Tracking!</h1>
+                            <p class="text-sm md:text-lg">Log five check-ins to see your average mood</p>
+                        </div>
+                        <div class="sleep flex justify-start gap-2 items-end px-4 pt-4 py-1">
+                            <p class="font-bold text-lg">Average Sleep</p>
+                            <p class="text-sm">(After 5 check-ins)</p>
+                        </div>
+                        <div class="bg-slate-300 flex flex-col justify-start w-[90%] rounded-xl items-start py-5 px-2 mx-4"  id="averageSleep">
+                            <h1 class="text-lg md:text-xl font-bold">Not enough data yet!</h1>
+                            <p class="text-sm md:text-lg">Track five nights to view your average sleep</p>
+                        </div>
                     </div>
-                    <div class="sleep flex justify-start gap-2 items-end px-4 pt-4 py-1">
-                        <p class="font-bold text-lg">Average Sleep</p>
-                        <p class="text-sm">(After 5 check-ins)</p>
+                    <div class="forGrid border-2 border-slate-400 flex flex-col justify-start items-start w-[380px] sm:w-[700px] h-[500px] p-6 rounded-xl bg-white shadow-md">
+    <h1 class="text-2xl font-bold mb-4">Sleep Hours</h1>
+
+    <div class="flex w-full">
+        <!-- Y-axis with hours -->
+        <div class="flex flex-col justify-between pb-4 pr-4 text-right text-sm font-medium">
+        <p>9+ hrs</p>
+        <p>7-8 hrs</p>
+        <p>5-6 hrs</p>
+        <p>3-4 hrs</p>
+        <p>0-2 hrs</p>
+        <p>Let's See</p>
+        </div>
+
+        <!-- Chart area (bars will be inserted here dynamically) -->
+            <div id="barContainer" class="flex-1 overflow-x-scroll flex items-end gap-3 relative border-l-2 w-fit border-pink-300 pl-3 h-[420px]"></div>
+        </div>
+        </div>
+
+        </div>
+
+
+
+                        </div>
                     </div>
-                    <div class="bg-slate-300 flex flex-col justify-start w-[90%] rounded-xl items-start py-5 px-2 mx-4"  id="averageSleep">
-                        <h1 class="text-lg md:text-xl font-bold">Not enough data yet!</h1>
-                        <p class="text-sm md:text-lg">Track five nights to view your average sleep</p>
-                    </div>
-                </div>
-                <div class="forGrid border-2 border-slate-400 flex flex-col justify-start items-start w-[380px] sm:w-[700px] h-[500px] p-6 rounded-xl bg-white shadow-md">
-  <h1 class="text-2xl font-bold mb-4">Sleep Hours</h1>
-
-  <div class="flex w-full">
-    <!-- Y-axis with hours -->
-    <div class="flex flex-col justify-between pb-4 pr-4 text-right text-sm font-medium">
-      <p>9+ hrs</p>
-      <p>7-8 hrs</p>
-      <p>5-6 hrs</p>
-      <p>3-4 hrs</p>
-      <p>0-2 hrs</p>
-      <p>Let's See</p>
-    </div>
-
-    <!-- Chart area (bars will be inserted here dynamically) -->
-    <div id="barContainer" class="flex-1 overflow-x-scroll flex items-end gap-3 relative border-l-2 w-fit border-pink-300 pl-3 h-[420px]"></div>
-  </div>
-  </div>
-
-</div>
-
-
-
-                </div>
-            </div>
-    </div>
+        </div>
 
     <div class="logging-select-mood indi hide bg-[#f5f5ff] absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-sm h-md px-7 rounded-xl">
         <button class="cursor-pointer mt-3.5 flex justify-end w-full" id="exitBtn"><img src="./images/cross-svgrepo-com.svg" class="w-7 h-7" alt=""></button>
@@ -239,7 +239,6 @@
         </div>
         <button type="submit" id="continue2" class="w-full bg-blue-700 font-bold rounded-3xl mb-5 py-2 text-white">Continue</button>
     </div>    
-
     <div class="about-day hide indi bg-[#f5f5ff] absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-sm h-md px-7 rounded-xl">
         <button class="cursor-pointer mt-3.5 flex justify-end w-full" id="exitBtn"><img src="./images/cross-svgrepo-com.svg" class="w-7 h-7" alt=""></button>
         <h1 class="font-bold text-2xl">Log your mood</h1>
